@@ -10,6 +10,8 @@ I'm currently working on:
 * Streamlit app for business intelligence (save SQL for transformations, plotly code for plotting).
 * Quickdraw app via Streamlit (to try out some computer vision ideas).
 * Active Learning via bagged ensemble disagreement. 
-* Lightweight UIs for the QDrant Vector Database (and all things QDrant because they build excellent tools)
+* Lightweight UIs for the QDrant Vector Database (and all things QDrant because they build excellent tools) https://github.com/GeorgePearse/QDrant-NLP
 
-https://github.com/GeorgePearse/QDrant-NLP
+I'm talking at MLOps London on the 13th of October. Will demo the QDrant UI there.
+
+
