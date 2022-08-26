@@ -10,3 +10,4 @@ I'm currently working on:
 * Streamlit app for business intelligence (save SQL for transformations, plotly code for plotting).
 * Quickdraw app via Streamlit (to try out some computer vision ideas).
 * Active Learning via bagged ensemble disagreement. 
+* Lightweight UIs for the QDrant Vector Database (and all things QDrant because they build excellent tools)
