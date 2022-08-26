@@ -1,8 +1,10 @@
 ### About Me 
 
-I studied Physics, then I became a Data Engineering Consultant (Flask + SQL + AWS for orchestration), then I joined a Computer Vision start-up (behold.ai) where I've done a mixed bunch. Set-up the Modern Data Stack but also focused on data centric ai via active learning and corrupt sample discovery. I've also become much more involved in the MLOps community. 
+I studied Physics, then I became a Data Engineering Consultant (Flask + SQL + AWS for orchestration), then I joined a Computer Vision start-up (behold.ai) where I've done a mixed bunch. Set-up the Modern Data Stack but also focused on data-centric-ai via active learning and corrupt sample discovery. I've also become much more involved in the MLOps community. 
 
 Over the next few months I plan to generalise further, potentially by learning a front-end framework like svelte. I want to build end-end ML apps, eventually for real problems but initially for toy ones. 
+
+Keen to start consistently contributing to open-source projects too. 
 
 I'm currently working on:
 * Streamlit app for business intelligence (save SQL for transformations, plotly code for plotting).
