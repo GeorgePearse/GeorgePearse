@@ -14,6 +14,6 @@ I'm currently working on:
 * Active Learning via bagged ensemble disagreement. 
 * Lightweight UIs for the QDrant Vector Database (and all things QDrant because they build excellent tools) https://github.com/GeorgePearse/QDrant-NLP
 
-I'm talking at MLOps London on the 13th of October. Will demo the QDrant UI there.
+I'm talking at MLOps London on the 13th of October. Will demo QDrant-NLP there.
 
 
