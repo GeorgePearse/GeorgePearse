@@ -20,7 +20,6 @@ I'm talking at MLOps London on the 13th of October. Will demo QDrant-NLP there.
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=georgepearse&label=Profile%20views&color=0e75b6&style=flat" alt="georgepearse" /> </p>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=georgepearse" alt="georgepearse" /></a> </p>
 
 - 📝 I regularly write articles on [Active Learning and Computer Vision](Active Learning and Computer Vision)
 
