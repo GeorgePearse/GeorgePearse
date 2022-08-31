@@ -21,6 +21,11 @@ I'm talking at MLOps London on the 13th of October. Will demo QDrant-NLP there.
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
+- [Vector Databases for Data-Centric AI &lpar;Part 2&rpar;](https://medium.com/mlearning-ai/vector-databases-for-data-centric-ai-part-2-ba995053ce05?source=rss-b502c2f08a7c------2)
+- [Floating on Open-Source](https://medium.com/mlearning-ai/floating-on-open-source-bd6ff3817afb?source=rss-b502c2f08a7c------2)
+- [Quick Business Intelligence with Streamlit and SQL](https://medium.com/mlearning-ai/quick-business-intelligence-with-streamlit-and-sql-cd6a9ba8a48f?source=rss-b502c2f08a7c------2)
+- [How to Start Learning SQL with Streamlit and SQLite](https://medium.com/mlearning-ai/how-to-start-learning-sql-with-streamlit-d3edad7494cd?source=rss-b502c2f08a7c------2)
+- [A Framework for Picking Frameworks](https://medium.com/mlearning-ai/a-framework-for-picking-frameworks-a4cd273e0e18?source=rss-b502c2f08a7c------2)
 <!-- BLOG-POST-LIST:END -->
 
 <h3 align="left">Connect with me:</h3>
