@@ -16,12 +16,9 @@ I'm currently working on:
 
 I'm talking at MLOps London on the 13th of October. Will demo QDrant-NLP there.
 
-
-
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=georgepearse&label=Profile%20views&color=0e75b6&style=flat" alt="georgepearse" /> </p>
 
-
-- 📝 I regularly write articles on [Active Learning and Computer Vision](Active Learning and Computer Vision)
+- 📝 I regularly write articles on Active Learning
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
