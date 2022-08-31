@@ -2,6 +2,8 @@
 
 I write about Machine Learning, Analytics and Start-Ups at https://medium.com/@george.pearse
 
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=georgepearse&show_icons=true&locale=en" alt="georgepearse" /></p>
+
 I studied Physics, then I became a Data Engineering Consultant (Flask + SQL + AWS for orchestration), then I joined a Computer Vision start-up (behold.ai) where I've done a mixed bunch. Set-up the Modern Data Stack but also focused on data-centric-ai via active learning (pytorch-lightning and BAAL) and corrupt sample discovery (cleanlab esk techniques). I've also recently become much more involved in the MLOps community.
 
 Over the next few months I plan to generalise further, potentially by learning a front-end framework like svelte. I want to build end-end ML apps, eventually for real problems but initially for toy ones. 
@@ -26,5 +28,4 @@ I'm talking at MLOps London on the 13th of October. Will demo QDrant-NLP there.
 <a href="https://medium.com/@george.pearse" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@george.pearse" height="30" width="40" /></a>
 </p>
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=georgepearse&show_icons=true&locale=en" alt="georgepearse" /></p>
 
