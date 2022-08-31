@@ -2,7 +2,7 @@
 
 I write about Machine Learning, Analytics and Start-Ups at https://medium.com/@george.pearse
 
-I studied Physics, then I became a Data Engineering Consultant (Flask + SQL + AWS for orchestration), then I joined a Computer Vision start-up (behold.ai) where I've done a mixed bunch. Set-up the Modern Data Stack but also focused on data-centric-ai via active learning (pytorch-lightning and BAAL) and corrupt sample discovery (cleanlab esk techniques). I've also recently become much more involved in the MLOps community (speaking in the London stream on the 13th October 2022). 
+I studied Physics, then I became a Data Engineering Consultant (Flask + SQL + AWS for orchestration), then I joined a Computer Vision start-up (behold.ai) where I've done a mixed bunch. Set-up the Modern Data Stack but also focused on data-centric-ai via active learning (pytorch-lightning and BAAL) and corrupt sample discovery (cleanlab esk techniques). I've also recently become much more involved in the MLOps community.
 
 Over the next few months I plan to generalise further, potentially by learning a front-end framework like svelte. I want to build end-end ML apps, eventually for real problems but initially for toy ones. 
 
