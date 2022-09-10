@@ -6,6 +6,8 @@ I write about Machine Learning, Analytics and Start-Ups at https://medium.com/@g
 
 I studied Physics, then I became a Data Engineering Consultant (Flask + SQL + AWS for orchestration), then I joined a Computer Vision start-up (behold.ai) where I've done a mixed bunch. Set-up the Modern Data Stack but also focused on data-centric-ai via active learning (pytorch-lightning and BAAL) and corrupt sample discovery (cleanlab esk techniques). I've also recently become much more involved in the MLOps community.
 
+Soon to be joining BinIt as Lead ML Engineer. https://binit.ai/
+
 Over the next few months I plan to generalise further, potentially by learning a front-end framework like svelte. I want to build end-end ML apps, eventually for real problems but initially for toy ones. 
 
 Keen to start consistently contributing to open-source projects too and to try the "rootski approach" and to try to build a small, revenue generating app, fully in the open. 
