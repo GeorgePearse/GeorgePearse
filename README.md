@@ -23,7 +23,7 @@ I'm talking at MLOps London on the 13th of October. Will demo QDrant-NLP there.
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
-- [Quick NLP Labelling with Bulk](https://medium.com/@george.pearse/quick-nlp-labelling-with-bulk-327ccb62320?source=rss-b502c2f08a7c------2)
+- [Quick NLP Labelling with Bulk](https://medium.com/mlearning-ai/quick-nlp-labelling-with-bulk-327ccb62320?source=rss-b502c2f08a7c------2)
 - [Vector Databases for Data-Centric AI &lpar;Part 2&rpar;](https://medium.com/mlearning-ai/vector-databases-for-data-centric-ai-part-2-ba995053ce05?source=rss-b502c2f08a7c------2)
 - [Floating on Open-Source](https://medium.com/mlearning-ai/floating-on-open-source-bd6ff3817afb?source=rss-b502c2f08a7c------2)
 - [Quick Business Intelligence with Streamlit and SQL](https://medium.com/mlearning-ai/quick-business-intelligence-with-streamlit-and-sql-cd6a9ba8a48f?source=rss-b502c2f08a7c------2)
