@@ -8,10 +8,6 @@ I studied Physics, then I became a Data Engineering Consultant (Flask + SQL + AW
 
 Soon to be joining BinIt as Lead ML Engineer. https://binit.ai/
 
-Over the next few months I plan to generalise further, potentially by learning a front-end framework like svelte. I want to build end-end ML apps, eventually for real problems but initially for toy ones. 
-
-Keen to start consistently contributing to open-source projects too and to try the "rootski approach" and to try to build a small, revenue generating app, fully in the open. 
-
 I'm currently working on:
 * Streamlit app for business intelligence (save SQL for transformations, plotly code for plotting).
 * Quickdraw app via Streamlit (to try out some computer vision ideas).
