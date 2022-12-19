@@ -15,8 +15,6 @@ I'm currently working on:
 * Lightweight UIs for the QDrant Vector Database (and all things QDrant because they build excellent tools) https://github.com/GeorgePearse/QDrant-NLP
 * Multi-modal ML tools.
 
-I'm talking at MLOps London on the 13th of October. Will demo QDrant-NLP there.
-
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
 - [Data Engine Design](https://medium.com/mlearning-ai/data-engine-design-9b29a20ff9f0?source=rss-b502c2f08a7c------2)
