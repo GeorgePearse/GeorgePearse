@@ -1,5 +1,7 @@
 ### About Me 
 
+I became frustrated enough by the original Detectron2 docs that I decided to start creating my own https://georgepearse.github.io/unofficial-detectron2-docs/.
+
 I write about Machine Learning, Analytics and Start-Ups at https://medium.com/@george.pearse
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=georgepearse&show_icons=true&locale=en" alt="georgepearse" /></p>
