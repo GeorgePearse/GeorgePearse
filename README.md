@@ -19,11 +19,11 @@ I'm currently working on:
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
+- [How to train a model with MMDetection](https://medium.com/@george.pearse/how-to-train-a-model-with-mmdetection-8ab6a6fea3f0?source=rss-b502c2f08a7c------2)
 - [Data Engine Design](https://medium.com/mlearning-ai/data-engine-design-9b29a20ff9f0?source=rss-b502c2f08a7c------2)
 - [Quick NLP Labelling with Bulk](https://medium.com/mlearning-ai/quick-nlp-labelling-with-bulk-327ccb62320?source=rss-b502c2f08a7c------2)
 - [Vector Databases for Data-Centric AI &lpar;Part 2&rpar;](https://medium.com/mlearning-ai/vector-databases-for-data-centric-ai-part-2-ba995053ce05?source=rss-b502c2f08a7c------2)
 - [Floating on Open-Source](https://medium.com/mlearning-ai/floating-on-open-source-bd6ff3817afb?source=rss-b502c2f08a7c------2)
-- [Quick Business Intelligence with Streamlit and SQL](https://medium.com/mlearning-ai/quick-business-intelligence-with-streamlit-and-sql-cd6a9ba8a48f?source=rss-b502c2f08a7c------2)
 <!-- BLOG-POST-LIST:END -->
 
 <h3 align="left">Connect with me:</h3>
