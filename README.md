@@ -10,6 +10,16 @@ I studied Physics, then I became a Data Engineering Consultant (Flask + SQL + AW
 
 Soon to be joining BinIt as Lead ML Engineer. https://binit.ai/
 
+### GitHub Metrics
+
+<p align="center">
+  <img src="assets/followers_graph.svg" alt="GitHub Followers Over Time" width="100%">
+</p>
+
+<p align="center">
+  <img src="assets/stars_graph.svg" alt="Repository Stars Over Time" width="100%">
+</p>
+
 I'm currently working on:
 * Streamlit app for business intelligence (save SQL for transformations, plotly code for plotting).
 * Quickdraw app via Streamlit (to try out some computer vision ideas).
