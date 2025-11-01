@@ -236,6 +236,14 @@ main {
   border-radius: 14px;
   box-shadow: 0 16px 32px -28px var(--card-shadow);
   height: 100%;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.repo-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -20px var(--card-shadow);
 }
 
 .repo-card__header {
