@@ -17,7 +17,9 @@
     "cache": "tsx scripts/cache-repos.ts",
     "cache:refresh": "npm run cache && npm run format:check",
     "metrics": "tsx scripts/gather-real-metrics.ts",
-    "metrics:refresh": "npm run cache && npm run metrics"
+    "metrics:refresh": "npm run cache && npm run metrics",
+    "backfill": "tsx scripts/backfill-historical-metrics.ts",
+    "backfill:full": "npm run cache && npm run backfill"
   },
   "dependencies": {
     "react": "^18.2.0",
