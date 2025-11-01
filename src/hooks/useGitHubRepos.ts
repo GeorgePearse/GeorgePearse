@@ -48,7 +48,7 @@ export const useGitHubRepos = (options: UseGitHubReposOptions): UseGitHubReposRe
       });
 
       const normalised = filtered.map(normalise).sort((a, b) => {
-        return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
+        return b.stargazers_count - a.stargazers_count;
       });
 
       return normalised;
