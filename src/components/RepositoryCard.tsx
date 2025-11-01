@@ -57,7 +57,7 @@ export const RepositoryCard = ({ repository }: RepositoryCardProps) => {
           Docs
         </a>
       )}
-      {description && <p className="repo-card__description">{description}</p>}
+      <p className="repo-card__description">{description || ""}</p>
       <dl className="repo-card__meta">
         {language && (
           <div className="repo-card__meta-item">

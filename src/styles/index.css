@@ -298,6 +298,8 @@ main {
 .repo-card__description {
   color: var(--muted);
   font-size: 0.95rem;
+  min-height: 3.5rem;
+  flex-grow: 1;
 }
 
 .repo-card__meta {
@@ -306,6 +308,7 @@ main {
   font-size: 0.85rem;
   color: var(--muted);
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: auto;
 }
 
 .repo-card__meta-item dt {
