@@ -629,11 +629,13 @@ main {
 }
 
 .markdown-content a {
-  color: var(--accent);
-  text-decoration: none;
+  color: #1e40af;
+  text-decoration: underline;
+  font-weight: 500;
 }
 
 .markdown-content a:hover {
+  color: #1e3a8a;
   text-decoration: underline;
 }
 
