@@ -668,7 +668,6 @@ main {
 }
 
 .markdown-content pre {
-  background: var(--accent-light);
   padding: 0;
   border-radius: 12px;
   overflow-x: auto;
@@ -684,15 +683,9 @@ main {
 
 /* Style syntax highlighter wrapper */
 .markdown-content pre > div {
-  background: var(--accent-light) !important;
   padding: 1rem;
   border-radius: 12px;
   margin: 0;
-}
-
-/* Override syntax highlighter default background */
-.markdown-content pre > div > code {
-  background: transparent !important;
 }
 
 /* Alternative styling for gradient blue background - uncomment to use with gradient background */
