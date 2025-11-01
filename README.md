@@ -1,3 +1,9 @@
+Stuff to add: 
+- [ ] One of those flow chart things which shows the amount of projects that make it to each stage, through Idea -> PoC -> Real Implementation -> Blog or popular package
+- [ ] Embedding scatter plot of starred repos
+- [ ] Graph of starred repos
+- [ ] Better searchable interface of starred repos. 
+
 # George Pearse · Project Notebook
 
 This repository now powers a Vite + React site that documents everything I am studying and
