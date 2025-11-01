@@ -368,8 +368,8 @@ main {
 
 .about-photo {
   flex-shrink: 0;
-  width: 180px;
-  height: 180px;
+  width: 360px;
+  height: 360px;
 }
 
 .profile-image {
@@ -393,7 +393,7 @@ main {
   }
 
   .about-photo {
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
   }
 }
