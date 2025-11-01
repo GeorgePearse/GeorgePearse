@@ -514,7 +514,7 @@ main {
 }
 
 .readme-modal {
-  background: var(--card-bg);
+  background: #eff6ff;
   border: 1px solid var(--border);
   border-radius: 14px;
   width: 100%;
