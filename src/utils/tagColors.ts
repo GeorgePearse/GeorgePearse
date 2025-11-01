@@ -1,19 +1,19 @@
 // Generate a consistent color for a tag based on its name
 export function getTagColor(tag: string): { bg: string; text: string } {
-  // Predefined color palette with good contrast
+  // Predefined color palette with darker, subtle colors
   const colors = [
-    { bg: '#dbeafe', text: '#1e40af' }, // Blue
-    { bg: '#fce7f3', text: '#9f1239' }, // Pink
-    { bg: '#dcfce7', text: '#15803d' }, // Green
-    { bg: '#fef3c7', text: '#a16207' }, // Yellow
-    { bg: '#f3e8ff', text: '#6b21a8' }, // Purple
-    { bg: '#ffedd5', text: '#c2410c' }, // Orange
-    { bg: '#e0e7ff', text: '#3730a3' }, // Indigo
-    { bg: '#ccfbf1', text: '#115e59' }, // Teal
-    { bg: '#ffe4e6', text: '#be123c' }, // Rose
-    { bg: '#fef9c3', text: '#854d0e' }, // Amber
-    { bg: '#ddd6fe', text: '#5b21b6' }, // Violet
-    { bg: '#d1fae5', text: '#065f46' }, // Emerald
+    { bg: '#1e3a8a', text: '#bfdbfe' }, // Dark blue
+    { bg: '#831843', text: '#fbcfe8' }, // Dark pink
+    { bg: '#14532d', text: '#bbf7d0' }, // Dark green
+    { bg: '#713f12', text: '#fef08a' }, // Dark yellow
+    { bg: '#581c87', text: '#e9d5ff' }, // Dark purple
+    { bg: '#9a3412', text: '#fed7aa' }, // Dark orange
+    { bg: '#312e81', text: '#c7d2fe' }, // Dark indigo
+    { bg: '#134e4a', text: '#99f6e4' }, // Dark teal
+    { bg: '#881337', text: '#fecdd3' }, // Dark rose
+    { bg: '#78350f', text: '#fde68a' }, // Dark amber
+    { bg: '#4c1d95', text: '#ddd6fe' }, // Dark violet
+    { bg: '#064e3b', text: '#a7f3d0' }, // Dark emerald
   ];
 
   // Simple hash function to convert string to number
