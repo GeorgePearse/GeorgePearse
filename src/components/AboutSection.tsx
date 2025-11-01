@@ -1,3 +1,5 @@
+import profilePhoto from "../../assets/profile-photo.jpg";
+
 const joined = "BinIt";
 
 export const AboutSection = () => {
@@ -5,7 +7,7 @@ export const AboutSection = () => {
     <section className="section about-section">
       <div className="about-container">
         <div className="about-photo">
-          <img src="/profile-photo.jpg" alt="George Pearse" className="profile-image" />
+          <img src={profilePhoto} alt="George Pearse" className="profile-image" />
         </div>
         <div className="about-content">
           <div className="section-header">
