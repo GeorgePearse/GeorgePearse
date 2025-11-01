@@ -2,7 +2,9 @@ Stuff to add:
 - [ ] One of those flow chart things which shows the amount of projects that make it to each stage, through Idea -> PoC -> Real Implementation -> Blog or popular package
 - [ ] Embedding scatter plot of starred repos
 - [ ] Graph of starred repos
-- [ ] Better searchable interface of starred repos. 
+- [ ] Better searchable interface of starred repos.
+- [ ] Find a way to encourage me to work on certain projects via. how they're visualised (e.g. traffic light system or similar).
+- [ ] A general webserver and react UI for all coding CLIs (similar to how ML experiment trackes all have interfaces that make it easy to work with irrespective of the training framework used)
 
 # George Pearse · Project Notebook
 
