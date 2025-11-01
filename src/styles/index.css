@@ -347,9 +347,11 @@ main {
   margin: 0;
   min-height: 3.5rem;
   margin-top: auto;
+  align-items: flex-start;
 }
 
 .repo-card__tag {
+  display: block;
   flex-shrink: 0;
   background: var(--accent-light);
   color: var(--accent);
@@ -359,6 +361,7 @@ main {
   text-transform: lowercase;
   white-space: nowrap;
   line-height: 1.2;
+  height: auto;
 }
 
 .status-message {
