@@ -95,7 +95,12 @@ export const ReadmeModal = ({ owner, repo, onClose }: ReadmeModalProps) => {
           </button>
         </header>
         <div className="readme-modal__content">
-          {isLoading && <p className="readme-modal__loading">Loading README...</p>}
+          {isLoading && (
+            <div className="readme-modal__loading">
+              <div className="spinner"></div>
+              <p>Loading README...</p>
+            </div>
+          )}
           {error && <p className="readme-modal__error">{error}</p>}
           {!isLoading && !error && (
             <div className="markdown-content">
