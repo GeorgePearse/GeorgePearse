@@ -592,7 +592,7 @@ main {
 /* Markdown Content Styles */
 .markdown-content {
   line-height: 1.6;
-  color: inherit;
+  color: #1e293b;
 }
 
 .markdown-content h1,
@@ -752,4 +752,38 @@ main {
   border: none;
   border-top: 1px solid var(--border);
   margin: 2rem 0;
+}
+
+/* Dark mode support for markdown content */
+@media (prefers-color-scheme: dark) {
+  .markdown-content {
+    color: #e2e8f0;
+  }
+
+  .markdown-content code {
+    background: #1e293b;
+    color: #e2e8f0;
+    border-color: #334155;
+  }
+
+  .markdown-content pre {
+    background: #1e293b;
+    border-color: #334155;
+  }
+
+  .markdown-content pre > div {
+    background: #1e293b !important;
+  }
+
+  .markdown-content a {
+    color: #60a5fa;
+  }
+
+  .markdown-content a:hover {
+    color: #93c5fd;
+  }
+
+  .markdown-content th {
+    background: rgba(148, 163, 184, 0.1);
+  }
 }
