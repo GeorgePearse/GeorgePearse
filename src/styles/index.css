@@ -76,7 +76,6 @@ main {
 .section-header h2 {
   font-size: clamp(2rem, 2.4vw, 2.5rem);
   font-weight: 700;
-  color: var(--title-color);
 }
 
 .subtitle {
@@ -170,7 +169,6 @@ main {
 .tag-panel__header h3 {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--title-color);
 }
 
 .tag-panel__header p {
@@ -463,7 +461,6 @@ main {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0;
-  color: var(--title-color);
 }
 
 .metric-toggles {
@@ -548,7 +545,6 @@ main {
 .readme-modal__header h2 {
   font-size: 1.25rem;
   margin: 0;
-  color: var(--title-color);
 }
 
 .readme-modal__close {
@@ -618,7 +614,6 @@ main {
   margin-bottom: 0.75rem;
   font-weight: 600;
   line-height: 1.3;
-  color: var(--title-color);
 }
 
 .markdown-content h1 {
