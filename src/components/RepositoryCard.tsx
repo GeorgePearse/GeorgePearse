@@ -108,25 +108,23 @@ export const RepositoryCard = ({ repository, onReadmeClick }: RepositoryCardProp
           <dd>{formatDistanceToNow(updatedAt)}</dd>
         </div>
       </dl>
-      {allTags.length > 0 && (
-        <ul className="repo-card__tags">
-          {allTags.map((tag) => {
-            const colors = getTagColor(tag);
-            return (
-              <li
-                key={tag}
-                className="repo-card__tag"
-                style={{
-                  backgroundColor: colors.bg,
-                  color: colors.text,
-                }}
-              >
-                {tag}
-              </li>
-            );
-          })}
-        </ul>
-      )}
+      <ul className="repo-card__tags">
+        {allTags.map((tag) => {
+          const colors = getTagColor(tag);
+          return (
+            <li
+              key={tag}
+              className="repo-card__tag"
+              style={{
+                backgroundColor: colors.bg,
+                color: colors.text,
+              }}
+            >
+              {tag}
+            </li>
+          );
+        })}
+      </ul>
     </article>
   );
 };
