@@ -351,6 +351,8 @@ main {
 
 .repo-card__tag {
   display: inline-block;
+  flex: 0 0 auto;
+  width: auto;
   background: var(--accent-light);
   color: var(--accent);
   padding: 0.25rem 0.6rem;
@@ -359,6 +361,9 @@ main {
   text-transform: lowercase;
   white-space: nowrap;
   line-height: 1.2;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .status-message {
