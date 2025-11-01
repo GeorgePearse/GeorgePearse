@@ -10,11 +10,14 @@ const GITHUB_USERNAME = "GeorgePearse";
 const TAG_DESCRIPTION =
   "Tags are pulled directly from the repository topics you maintain on GitHub.";
 
+type SortOption = "updated" | "stars" | "name";
+
 export default function App() {
   const { repositories, isLoading, error } = useGitHubRepos({ username: GITHUB_USERNAME });
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [activeLanguage, setActiveLanguage] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [sortBy, setSortBy] = useState<SortOption>("updated");
 
   const tags: TagMeta[] = useMemo(() => {
     const counts = new Map<string, number>();
@@ -44,7 +47,7 @@ export default function App() {
   }, [repositories]);
 
   const filteredRepositories = useMemo(() => {
-    return repositories.filter((repo) => {
+    const filtered = repositories.filter((repo) => {
       const matchesTag = activeTag ? repo.allTags.includes(activeTag) : true;
       if (!matchesTag) {
         return false;
@@ -66,7 +69,21 @@ export default function App() {
         repo.allTags.some((tag) => tag.includes(query))
       );
     });
-  }, [repositories, activeTag, activeLanguage, searchTerm]);
+
+    // Apply sorting
+    return filtered.sort((a, b) => {
+      switch (sortBy) {
+        case "updated":
+          return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
+        case "stars":
+          return b.stargazers_count - a.stargazers_count;
+        case "name":
+          return a.name.localeCompare(b.name);
+        default:
+          return 0;
+      }
+    });
+  }, [repositories, activeTag, activeLanguage, searchTerm, sortBy]);
 
   return (
     <div className="app-shell">
@@ -93,6 +110,35 @@ export default function App() {
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
               />
+            </div>
+            <div className="tag-panel">
+              <div className="tag-panel__header">
+                <h3>Sort By</h3>
+                <p>Order repositories by different criteria</p>
+              </div>
+              <div className="tag-filter">
+                <button
+                  className={`tag-pill ${sortBy === "updated" ? "active" : ""}`}
+                  onClick={() => setSortBy("updated")}
+                  type="button"
+                >
+                  Last Updated
+                </button>
+                <button
+                  className={`tag-pill ${sortBy === "stars" ? "active" : ""}`}
+                  onClick={() => setSortBy("stars")}
+                  type="button"
+                >
+                  Stars
+                </button>
+                <button
+                  className={`tag-pill ${sortBy === "name" ? "active" : ""}`}
+                  onClick={() => setSortBy("name")}
+                  type="button"
+                >
+                  Name
+                </button>
+              </div>
             </div>
             <div className="tag-panel">
               <div className="tag-panel__header">
