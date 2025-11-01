@@ -446,7 +446,7 @@ function aggregateSnapshots(allRepoProgress: RepoProgress[]): RepoMetricsSnapsho
         date: dateStr,
         totalCommits,
         totalStars,
-        totalLOC,
+        totalLinesOfCode: totalLOC,
       },
     });
   }
