@@ -3,9 +3,10 @@ import type { RepositoryWithTags } from "../types/github";
 
 interface RepositoryCardProps {
   repository: RepositoryWithTags;
+  onReadmeClick?: () => void;
 }
 
-export const RepositoryCard = ({ repository }: RepositoryCardProps) => {
+export const RepositoryCard = ({ repository, onReadmeClick }: RepositoryCardProps) => {
   const {
     name,
     html_url: url,
@@ -56,6 +57,32 @@ export const RepositoryCard = ({ repository }: RepositoryCardProps) => {
           </span>
           Docs
         </a>
+      )}
+      {onReadmeClick && (
+        <button
+          className="repo-card__readme"
+          onClick={onReadmeClick}
+          type="button"
+          title="View README"
+        >
+          <span className="repo-card__readme-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="img" focusable="false">
+              <path
+                d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"
+                fill="currentColor"
+                opacity="0.5"
+              />
+              <path
+                d="M9 9h6M9 13h6M9 17h4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+          </span>
+          README
+        </button>
       )}
       {description && <p className="repo-card__description">{description}</p>}
       <dl className="repo-card__meta">
