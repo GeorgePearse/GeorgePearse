@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { oneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 interface ReadmeModalProps {
   owner: string;
@@ -86,7 +88,29 @@ export const ReadmeModal = ({ owner, repo, onClose }: ReadmeModalProps) => {
           {error && <p className="readme-modal__error">{error}</p>}
           {!isLoading && !error && (
             <div className="markdown-content">
-              <Markdown>{content}</Markdown>
+              <Markdown
+                components={{
+                  code(props) {
+                    const { children, className, node, ...rest } = props;
+                    const match = /language-(\w+)/.exec(className || "");
+                    return match ? (
+                      <SyntaxHighlighter
+                        style={oneLight as any}
+                        language={match[1]}
+                        PreTag="div"
+                      >
+                        {String(children).replace(/\n$/, "")}
+                      </SyntaxHighlighter>
+                    ) : (
+                      <code className={className} {...rest}>
+                        {children}
+                      </code>
+                    );
+                  },
+                }}
+              >
+                {content}
+              </Markdown>
             </div>
           )}
         </div>
