@@ -1,4 +1,5 @@
 import { formatDistanceToNow } from "../utils/dates";
+import { getTagColor } from "../utils/tagColors";
 import type { RepositoryWithTags } from "../types/github";
 
 interface RepositoryCardProps {
@@ -109,11 +110,21 @@ export const RepositoryCard = ({ repository, onReadmeClick }: RepositoryCardProp
       </dl>
       {allTags.length > 0 && (
         <ul className="repo-card__tags">
-          {allTags.map((tag) => (
-            <li key={tag} className="repo-card__tag">
-              {tag}
-            </li>
-          ))}
+          {allTags.map((tag) => {
+            const colors = getTagColor(tag);
+            return (
+              <li
+                key={tag}
+                className="repo-card__tag"
+                style={{
+                  backgroundColor: colors.bg,
+                  color: colors.text,
+                }}
+              >
+                {tag}
+              </li>
+            );
+          })}
         </ul>
       )}
     </article>
