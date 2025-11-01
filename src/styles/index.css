@@ -258,17 +258,12 @@ main {
 
 .repo-card__header h3 {
   font-size: 1.25rem;
-  color: var(--accent);
 }
 
 .repo-card__header a {
   text-decoration: none;
-  color: var(--accent);
-  transition: color 0.2s ease;
-}
-
-.repo-card__header a:hover {
-  color: var(--title-color);
+  transition: color 0.15s ease-out;
+  will-change: color;
 }
 
 .repo-card__actions {

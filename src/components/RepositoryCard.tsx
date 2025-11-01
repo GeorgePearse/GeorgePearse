@@ -1,5 +1,7 @@
+import { useEffect, useRef, useState } from "react";
 import { formatDistanceToNow } from "../utils/dates";
 import { getTagColor } from "../utils/tagColors";
+import { getProximityColor } from "../utils/proximityColor";
 import type { RepositoryWithTags } from "../types/github";
 
 interface RepositoryCardProps {
@@ -8,6 +10,8 @@ interface RepositoryCardProps {
 }
 
 export const RepositoryCard = ({ repository, onReadmeClick }: RepositoryCardProps) => {
+  const titleRef = useRef<HTMLAnchorElement>(null);
+  const [titleColor, setTitleColor] = useState("rgb(37, 99, 235)"); // Default blue
   const {
     name,
     html_url: url,
@@ -21,11 +25,30 @@ export const RepositoryCard = ({ repository, onReadmeClick }: RepositoryCardProp
     hasDocsLink,
   } = repository;
 
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (titleRef.current) {
+        const rect = titleRef.current.getBoundingClientRect();
+        const color = getProximityColor(e.clientX, e.clientY, rect);
+        setTitleColor(color);
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
     <article className="repo-card">
       <header className="repo-card__header">
         <h3>
-          <a href={url} target="_blank" rel="noreferrer">
+          <a
+            ref={titleRef}
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            style={{ color: titleColor }}
+          >
             {name}
           </a>
         </h3>
