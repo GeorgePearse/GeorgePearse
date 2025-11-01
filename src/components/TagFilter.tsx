@@ -1,4 +1,5 @@
 import type { MouseEvent } from "react";
+import { getTagColor } from "../utils/tagColors";
 
 export interface TagMeta {
   label: string;
@@ -31,18 +32,25 @@ export const TagFilter = ({ tags, activeTag, onTagSelect }: TagFilterProps) => {
       >
         All
       </button>
-      {tags.map((tag) => (
-        <button
-          key={tag.label}
-          type="button"
-          value={tag.label}
-          className={`tag-pill ${activeTag === tag.label ? "active" : ""}`.trim()}
-          onClick={handleClick}
-        >
-          {tag.label}
-          <span className="tag-count">{tag.count}</span>
-        </button>
-      ))}
+      {tags.map((tag) => {
+        const colors = getTagColor(tag.label);
+        return (
+          <button
+            key={tag.label}
+            type="button"
+            value={tag.label}
+            className={`tag-pill ${activeTag === tag.label ? "active" : ""}`.trim()}
+            onClick={handleClick}
+            style={{
+              backgroundColor: colors.bg,
+              color: colors.text,
+            }}
+          >
+            {tag.label}
+            <span className="tag-count">{tag.count}</span>
+          </button>
+        );
+      })}
     </div>
   );
 };
