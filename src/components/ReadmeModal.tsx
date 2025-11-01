@@ -1,60 +1,74 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
+import Markdown from "react-markdown";
 
 interface ReadmeModalProps {
-  isOpen: boolean;
-  repositoryName: string;
-  readmeContent: string | null;
-  isLoading: boolean;
+  owner: string;
+  repo: string;
   onClose: () => void;
 }
 
-export const ReadmeModal = ({
-  isOpen,
-  repositoryName,
-  readmeContent,
-  isLoading,
-  onClose,
-}: ReadmeModalProps) => {
-  const modalRef = useRef<HTMLDivElement>(null);
+export const ReadmeModal = ({ owner, repo, onClose }: ReadmeModalProps) => {
+  const [content, setContent] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!isOpen) return;
+    const fetchReadme = async () => {
+      try {
+        setIsLoading(true);
+        setError(null);
 
+        const response = await fetch(
+          `https://api.github.com/repos/${owner}/${repo}/readme`,
+          {
+            headers: {
+              Accept: "application/vnd.github.v3.raw",
+            },
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("README not found");
+        }
+
+        const text = await response.text();
+        setContent(text);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Failed to load README");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchReadme();
+  }, [owner, repo]);
+
+  useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         onClose();
       }
     };
 
-    const handleClickOutside = (e: MouseEvent) => {
-      if (modalRef.current && e.target === modalRef.current) {
-        onClose();
-      }
-    };
-
     document.addEventListener("keydown", handleEscape);
-    document.addEventListener("click", handleClickOutside);
     document.body.style.overflow = "hidden";
 
     return () => {
       document.removeEventListener("keydown", handleEscape);
-      document.removeEventListener("click", handleClickOutside);
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
     };
-  }, [isOpen, onClose]);
-
-  if (!isOpen) return null;
+  }, [onClose]);
 
   return (
-    <div className="readme-modal-overlay" ref={modalRef}>
-      <div className="readme-modal">
-        <div className="readme-modal__header">
-          <h2>{repositoryName}</h2>
+    <div className="readme-modal-backdrop" onClick={onClose}>
+      <div className="readme-modal" onClick={(e) => e.stopPropagation()}>
+        <header className="readme-modal__header">
+          <h2>{repo} README</h2>
           <button
             className="readme-modal__close"
             onClick={onClose}
-            aria-label="Close modal"
             type="button"
+            aria-label="Close"
           >
             <svg viewBox="0 0 24 24" role="img" focusable="false">
               <path
@@ -66,22 +80,14 @@ export const ReadmeModal = ({
               />
             </svg>
           </button>
-        </div>
-
+        </header>
         <div className="readme-modal__content">
-          {isLoading && (
-            <p className="readme-modal__loading">Loading README...</p>
-          )}
-          {!isLoading && readmeContent ? (
-            <pre className="readme-modal__body">
-              {readmeContent}
-            </pre>
-          ) : (
-            !isLoading && (
-              <p className="readme-modal__empty">
-                No README found for this repository.
-              </p>
-            )
+          {isLoading && <p className="readme-modal__loading">Loading README...</p>}
+          {error && <p className="readme-modal__error">{error}</p>}
+          {!isLoading && !error && (
+            <div className="markdown-content">
+              <Markdown>{content}</Markdown>
+            </div>
           )}
         </div>
       </div>
