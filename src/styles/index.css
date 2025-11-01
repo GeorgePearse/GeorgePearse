@@ -639,13 +639,24 @@ main {
   text-decoration: underline;
 }
 
-.markdown-content code {
+/* Inline code styling - not inside pre blocks */
+.markdown-content p code,
+.markdown-content li code,
+.markdown-content td code,
+.markdown-content th code,
+.markdown-content h1 code,
+.markdown-content h2 code,
+.markdown-content h3 code,
+.markdown-content h4 code,
+.markdown-content h5 code,
+.markdown-content h6 code,
+.markdown-content blockquote code {
   font-family: "JetBrains Mono", "SFMono-Regular", "Menlo", monospace;
-  background: #ffffff;
+  background: #ffffff !important;
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
   font-size: 0.9em;
-  border: 1px solid #93c5fd;
+  border: 1px solid #93c5fd !important;
   color: #1e293b;
 }
 
@@ -760,10 +771,21 @@ main {
     color: #e2e8f0;
   }
 
-  .markdown-content code {
-    background: #1e293b;
+  /* Dark mode inline code */
+  .markdown-content p code,
+  .markdown-content li code,
+  .markdown-content td code,
+  .markdown-content th code,
+  .markdown-content h1 code,
+  .markdown-content h2 code,
+  .markdown-content h3 code,
+  .markdown-content h4 code,
+  .markdown-content h5 code,
+  .markdown-content h6 code,
+  .markdown-content blockquote code {
+    background: #1e293b !important;
     color: #e2e8f0;
-    border-color: #334155;
+    border-color: #334155 !important;
   }
 
   .markdown-content pre {
