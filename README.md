@@ -78,8 +78,47 @@ the app requests fresh data on each visit.
 └── vite.config.ts          # Build configuration
 ```
 
+## Real GitHub Metrics
+
+The site now displays **real GitHub activity metrics** powered by daily data collection:
+
+### Features
+- **Real Data**: Fetches actual commit counts, stars, and lines of code from GitHub API
+- **Historical Tracking**: Builds true historical trends by storing daily snapshots
+- **Automated Updates**: GitHub Actions workflow runs daily to collect and commit new data
+- **Interactive Charts**: React components display trends using Recharts library
+
+### Usage
+
+To collect metrics manually:
+
+```bash
+# Set your GitHub token
+export GITHUB_TOKEN='your_personal_access_token'
+
+# Gather current metrics
+npm run metrics
+
+# Or refresh repos cache and gather metrics
+npm run metrics:refresh
+```
+
+### Data Files
+- `data/historical-metrics.json` - Daily snapshots with per-repository breakdown
+- `src/data/repos-metrics.json` - Monthly aggregated data for chart display
+- `src/data/cached-repos.json` - Repository metadata cache
+
+### Automation
+
+The `.github/workflows/gather-real-metrics.yml` workflow:
+- Runs daily at 3 AM UTC
+- Collects fresh metrics from GitHub
+- Commits updated data files automatically
+
+See [docs/REAL_METRICS_GUIDE.md](docs/REAL_METRICS_GUIDE.md) for complete documentation.
+
 ## Legacy Metrics
 
-The original metrics-generation scripts and assets remain untouched under `scripts/` and `data/` so
-that GitHub profile graphics continue to render as before. They can be invoked independently of the
-React app whenever you want to refresh the SVG charts.
+The original Python-based metrics scripts under `scripts/github_metrics/` generate SVG graphs for
+followers and stars. They continue to work independently and are maintained for GitHub profile
+graphics.

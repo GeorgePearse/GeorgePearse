@@ -119,9 +119,9 @@ export const MetricsChart = () => {
       </div>
 
       <p className="metrics-subtitle">
-        {config.key === "commits" && "Total commits across all repositories over the past year."}
-        {config.key === "stars" && "Cumulative stars received across all repositories."}
-        {config.key === "loc" && "Estimated total lines of code across all repositories."}
+        {config.key === "commits" && "Total commits across all repositories. Data collected from real GitHub API metrics."}
+        {config.key === "stars" && "Cumulative stars received across all repositories. Data collected daily from GitHub."}
+        {config.key === "loc" && "Estimated total lines of code across all repositories. Based on GitHub language statistics."}
       </p>
     </section>
   );
