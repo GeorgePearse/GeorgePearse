@@ -13,7 +13,9 @@
     "format:check": "prettier --check src/",
     "test": "playwright test",
     "test:ui": "playwright test --ui",
-    "test:debug": "playwright test --debug"
+    "test:debug": "playwright test --debug",
+    "cache": "tsx scripts/cache-repos.ts",
+    "cache:refresh": "npm run cache && npm run format:check"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -30,6 +32,7 @@
     "oxlint": "^1.25.0",
     "pre-commit": "^1.2.2",
     "prettier": "^3.6.2",
+    "tsx": "^4.20.6",
     "typescript": "^5.3.3",
     "vite": "^5.0.0"
   }

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import type { GitHubRepo, RepositoryWithTags } from "../types/github";
+import cachedReposData from "../data/cached-repos.json";
 
 interface UseGitHubReposOptions {
   username: string;
@@ -80,10 +81,12 @@ export const useGitHubRepos = (options: UseGitHubReposOptions): UseGitHubReposRe
       setIsLoading(true);
       setError(null);
 
-      const aggregated: GitHubRepo[] = [];
+      let aggregated: GitHubRepo[] = [];
+      let fetchedFresh = false;
       let page = 1;
 
       try {
+        // Try to fetch fresh data from GitHub API
         while (true) {
           const pageData = await fetchPage(username, page);
           aggregated.push(...pageData);
@@ -92,35 +95,48 @@ export const useGitHubRepos = (options: UseGitHubReposOptions): UseGitHubReposRe
           }
           page += 1;
         }
-
-        if (cancelled) {
-          return;
-        }
-
-        const filtered = aggregated.filter((repo) => {
-          if (!includeForks && repo.fork) {
-            return false;
-          }
-          if (!includeArchived && repo.archived) {
-            return false;
-          }
-          return true;
-        });
-
-        const normalised = filtered.map(normalise).sort((a, b) => {
-          return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
-        });
-
-        setRepositories(normalised);
+        fetchedFresh = true;
       } catch (err) {
-        if (!cancelled) {
+        // Fall back to cached data if API fetch fails
+        if (
+          cachedReposData &&
+          typeof cachedReposData === "object" &&
+          "repositories" in cachedReposData
+        ) {
+          const cached = cachedReposData as { repositories: GitHubRepo[] };
+          aggregated = cached.repositories;
           const message = err instanceof Error ? err.message : "Unknown error";
-          setError(message);
+          setError(`Using cached data. ${message}`);
+        } else {
+          if (!cancelled) {
+            const message = err instanceof Error ? err.message : "Unknown error";
+            setError(message);
+          }
         }
-      } finally {
-        if (!cancelled) {
-          setIsLoading(false);
+      }
+
+      if (cancelled) {
+        return;
+      }
+
+      const filtered = aggregated.filter((repo) => {
+        if (!includeForks && repo.fork) {
+          return false;
         }
+        if (!includeArchived && repo.archived) {
+          return false;
+        }
+        return true;
+      });
+
+      const normalised = filtered.map(normalise).sort((a, b) => {
+        return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
+      });
+
+      setRepositories(normalised);
+
+      if (!cancelled) {
+        setIsLoading(false);
       }
     };
 
