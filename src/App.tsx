@@ -13,6 +13,7 @@ const TAG_DESCRIPTION =
 export default function App() {
   const { repositories, isLoading, error } = useGitHubRepos({ username: GITHUB_USERNAME });
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [activeLanguage, setActiveLanguage] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
 
   const tags: TagMeta[] = useMemo(() => {
@@ -29,10 +30,28 @@ export default function App() {
       .sort((a, b) => a.label.localeCompare(b.label));
   }, [repositories]);
 
+  const languages: TagMeta[] = useMemo(() => {
+    const counts = new Map<string, number>();
+    repositories.forEach((repo) => {
+      if (repo.language) {
+        counts.set(repo.language, (counts.get(repo.language) ?? 0) + 1);
+      }
+    });
+
+    return Array.from(counts.entries())
+      .map(([label, count]) => ({ label, count }))
+      .sort((a, b) => b.count - a.count);
+  }, [repositories]);
+
   const filteredRepositories = useMemo(() => {
     return repositories.filter((repo) => {
       const matchesTag = activeTag ? repo.allTags.includes(activeTag) : true;
       if (!matchesTag) {
+        return false;
+      }
+
+      const matchesLanguage = activeLanguage ? repo.language === activeLanguage : true;
+      if (!matchesLanguage) {
         return false;
       }
 
@@ -47,7 +66,7 @@ export default function App() {
         repo.allTags.some((tag) => tag.includes(query))
       );
     });
-  }, [repositories, activeTag, searchTerm]);
+  }, [repositories, activeTag, activeLanguage, searchTerm]);
 
   return (
     <div className="app-shell">
@@ -74,6 +93,21 @@ export default function App() {
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
               />
+            </div>
+            <div className="tag-panel">
+              <div className="tag-panel__header">
+                <h3>Languages</h3>
+                <p>Filter by primary programming language</p>
+              </div>
+              {languages.length > 0 ? (
+                <TagFilter
+                  tags={languages}
+                  activeTag={activeLanguage}
+                  onTagSelect={setActiveLanguage}
+                />
+              ) : (
+                <p className="tag-panel__empty">No language data available.</p>
+              )}
             </div>
             <div className="tag-panel">
               <div className="tag-panel__header">

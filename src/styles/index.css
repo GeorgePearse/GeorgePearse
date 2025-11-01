@@ -106,7 +106,16 @@ main {
   .filters-panel {
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .filters-panel > .search-field {
+    flex: 1 1 100%;
+  }
+
+  .filters-panel > .tag-panel {
+    flex: 1 1 auto;
+    min-width: 300px;
   }
 }
 
