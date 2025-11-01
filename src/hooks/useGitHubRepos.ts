@@ -67,9 +67,7 @@ const fetchPage = async (username: string, page: number): Promise<GitHubRepo[]> 
   return data;
 };
 
-export const useGitHubRepos = (
-  options: UseGitHubReposOptions
-): UseGitHubReposResult => {
+export const useGitHubRepos = (options: UseGitHubReposOptions): UseGitHubReposResult => {
   const { username, includeArchived = false, includeForks = false } = options;
   const [repositories, setRepositories] = useState<RepositoryWithTags[]>([]);
   const [isLoading, setIsLoading] = useState(true);

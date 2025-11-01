@@ -1,6 +1,12 @@
 :root {
   color-scheme: light dark;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
@@ -31,7 +37,8 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   min-height: 100%;
 }
 
@@ -124,7 +131,9 @@ main {
   border: 1px solid var(--border);
   background-color: transparent;
   color: inherit;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .search-field input[type="search"]:focus {
@@ -179,7 +188,10 @@ main {
   align-items: center;
   gap: 0.4rem;
   cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .tag-pill .tag-count {
@@ -251,7 +263,10 @@ main {
   letter-spacing: 0.06em;
   color: inherit;
   text-decoration: none;
-  transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .repo-card__docs:hover {

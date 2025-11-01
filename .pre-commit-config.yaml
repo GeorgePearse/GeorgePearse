@@ -1,0 +1,31 @@
+default_stages: [commit]
+
+repos:
+  # oxc ecosystem: fast JavaScript/TypeScript linter
+  - repo: local
+    hooks:
+      - id: oxlint
+        name: oxlint
+        description: Ultra-fast JavaScript/TypeScript linter from the oxc ecosystem
+        entry: npx oxlint
+        language: system
+        types: [javascript, typescript, jsx, tsx]
+        require_serial: true
+        exclude: ^(dist|node_modules)/
+
+      - id: eslint
+        name: eslint
+        description: ESLint for additional JS/TS linting rules
+        entry: npx eslint
+        language: system
+        types: [javascript, typescript, jsx, tsx]
+        require_serial: false
+        exclude: ^(dist|node_modules)/
+
+      - id: prettier
+        name: prettier
+        description: Code formatter
+        entry: npx prettier --write
+        language: system
+        types_or: [javascript, typescript, jsx, tsx, json, yaml, markdown]
+        exclude: ^(dist|node_modules)/

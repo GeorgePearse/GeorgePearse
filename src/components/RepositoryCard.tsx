@@ -26,12 +26,7 @@ export const RepositoryCard = ({ repository }: RepositoryCardProps) => {
             {name}
           </a>
         </h3>
-        <a
-          className="repo-card__docs"
-          href={docsUrl ?? url}
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a className="repo-card__docs" href={docsUrl ?? url} target="_blank" rel="noreferrer">
           <span className="repo-card__docs-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" role="img" focusable="false">
               <path

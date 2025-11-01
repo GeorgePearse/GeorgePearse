@@ -56,7 +56,9 @@ export default function App() {
         <section className="section">
           <div className="section-header">
             <h2>Projects &amp; Repositories</h2>
-            <p className="subtitle">Explore everything I have shipped, tinkered with, or archived.</p>
+            <p className="subtitle">
+              Explore everything I have shipped, tinkered with, or archived.
+            </p>
           </div>
 
           <div className="filters-panel">
@@ -90,9 +92,8 @@ export default function App() {
             <div className="status-message error">
               <p>Unable to load repositories right now.</p>
               <p>
-                {error}
-                {" "}
-                Try again later or add a GitHub token in a <code>.env.local</code> file using
+                {error} Try again later or add a GitHub token in a <code>.env.local</code> file
+                using
                 <code>VITE_GITHUB_TOKEN</code>.
               </p>
             </div>
@@ -104,12 +105,10 @@ export default function App() {
 
       <footer className="footer">
         <p>
-          Built with React &amp; Vite. Data fetched live from GitHub for the
-          {" "}
+          Built with React &amp; Vite. Data fetched live from GitHub for the{" "}
           <a href={`https://github.com/${GITHUB_USERNAME}`} target="_blank" rel="noreferrer">
             @{GITHUB_USERNAME}
-          </a>
-          {" "}
+          </a>{" "}
           account.
         </p>
       </footer>
