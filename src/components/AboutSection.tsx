@@ -1,6 +1,10 @@
 import profilePhoto from "../../assets/profile-photo.jpg";
 
-const joined = "BinIt";
+const joined = (
+  <a href="https://visia.ai" target="_blank" rel="noreferrer">
+    Visia
+  </a>
+);
 
 export const AboutSection = () => {
   return (
@@ -21,8 +25,7 @@ export const AboutSection = () => {
           </p>
           <p>
             I&apos;ve previously contributed to computer vision, data engineering, and MLOps
-            products, and I am currently building as the Lead ML Engineer at {joined}. When things
-            get tricky, that&apos;s a sign I&apos;m about to learn something useful—so I lean in.
+            products, and I am currently building as the Lead ML Engineer at {joined}.
           </p>
         </div>
       </div>

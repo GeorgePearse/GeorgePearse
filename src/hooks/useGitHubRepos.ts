@@ -18,12 +18,14 @@ const normalise = (repo: GitHubRepo): RepositoryWithTags => {
   const repoTopics = repo.topics ?? [];
   const normalisedTopics = repoTopics.map((tag) => tag.toLowerCase());
   const homepage = typeof repo.homepage === "string" ? repo.homepage.trim() : "";
-  const docsUrl = homepage.length > 0 ? homepage : `${repo.html_url}#readme`;
+  const hasDocsLink = homepage.length > 0;
+  const docsUrl = hasDocsLink ? homepage : null;
 
   return {
     ...repo,
     allTags: Array.from(new Set(normalisedTopics)),
     docsUrl,
+    hasDocsLink,
   };
 };
 

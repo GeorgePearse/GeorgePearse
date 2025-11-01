@@ -16,4 +16,5 @@ export interface GitHubRepo {
 export interface RepositoryWithTags extends GitHubRepo {
   allTags: string[];
   docsUrl: string | null;
+  hasDocsLink: boolean;
 }

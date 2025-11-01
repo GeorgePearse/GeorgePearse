@@ -16,6 +16,7 @@ export const RepositoryCard = ({ repository }: RepositoryCardProps) => {
     updated_at: updatedAt,
     allTags,
     docsUrl,
+    hasDocsLink,
   } = repository;
 
   return (
@@ -26,7 +27,9 @@ export const RepositoryCard = ({ repository }: RepositoryCardProps) => {
             {name}
           </a>
         </h3>
-        <a className="repo-card__docs" href={docsUrl ?? url} target="_blank" rel="noreferrer">
+      </header>
+      {hasDocsLink && docsUrl && (
+        <a className="repo-card__docs" href={docsUrl} target="_blank" rel="noreferrer">
           <span className="repo-card__docs-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" role="img" focusable="false">
               <path
@@ -53,7 +56,7 @@ export const RepositoryCard = ({ repository }: RepositoryCardProps) => {
           </span>
           Docs
         </a>
-      </header>
+      )}
       {description && <p className="repo-card__description">{description}</p>}
       <dl className="repo-card__meta">
         {language && (
