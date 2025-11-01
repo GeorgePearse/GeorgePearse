@@ -48,6 +48,11 @@ export const useGitHubRepos = (options: UseGitHubReposOptions): UseGitHubReposRe
       });
 
       const normalised = filtered.map(normalise).sort((a, b) => {
+        // First, sort by hasDocsLink (true comes first)
+        if (a.hasDocsLink !== b.hasDocsLink) {
+          return a.hasDocsLink ? -1 : 1;
+        }
+        // If both have same docs link status, sort by stars (descending)
         return b.stargazers_count - a.stargazers_count;
       });
 
