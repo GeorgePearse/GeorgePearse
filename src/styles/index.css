@@ -628,23 +628,40 @@ main {
 
 .markdown-content code {
   font-family: "JetBrains Mono", "SFMono-Regular", "Menlo", monospace;
-  background: rgba(15, 23, 42, 0.08);
+  background: linear-gradient(to bottom, #eff6ff, #dbeafe);
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
   font-size: 0.9em;
+  border: 1px solid #bfdbfe;
 }
 
 .markdown-content pre {
-  background: rgba(15, 23, 42, 0.08);
+  background: linear-gradient(to bottom, #eff6ff, #dbeafe);
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 10px;
   overflow-x: auto;
   margin: 1rem 0;
+  border: 1px solid #bfdbfe;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
 }
 
 .markdown-content pre code {
   background: none;
   padding: 0;
+  border: none;
+}
+
+/* Style syntax highlighter wrapper */
+.markdown-content pre > div {
+  background: linear-gradient(to bottom, #eff6ff, #dbeafe) !important;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0;
+}
+
+/* Override syntax highlighter default background */
+.markdown-content pre > div > code {
+  background: transparent !important;
 }
 
 .markdown-content ul,
