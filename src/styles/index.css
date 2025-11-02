@@ -83,6 +83,21 @@ main {
   font-size: 0.95rem;
 }
 
+.repo-count {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+.highlight-number {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: var(--accent);
+  padding: 0.1rem 0.3rem;
+  background: var(--accent-light);
+  border-radius: 6px;
+}
+
 .about-section p {
   font-size: 1.05rem;
   color: var(--muted);

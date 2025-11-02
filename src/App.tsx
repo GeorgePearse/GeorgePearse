@@ -98,6 +98,9 @@ export default function App() {
             <p className="subtitle">
               Explore everything I have shipped, tinkered with, or archived.
             </p>
+            <p className="repo-count">
+              Total repositories: <span className="highlight-number">{repositories.length}</span>
+            </p>
           </div>
 
           <div className="filters-panel">
