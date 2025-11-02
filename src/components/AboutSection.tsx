@@ -27,13 +27,6 @@ export const AboutSection = () => {
             I&apos;ve previously contributed to computer vision, data engineering, and MLOps
             products, and I am currently building as the Lead ML Engineer at {joined}.
           </p>
-          <p>
-            You can also view my{" "}
-            <a href="https://app.astralapp.com/" target="_blank" rel="noreferrer">
-              GitHub stars on Astral
-            </a>
-            .
-          </p>
         </div>
       </div>
     </section>
