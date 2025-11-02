@@ -187,6 +187,24 @@ export default function App() {
 
           {!isLoading && !error && <RepositoryGrid repositories={filteredRepositories} />}
         </section>
+
+        <section className="section">
+          <div className="section-header">
+            <h2>Random / Other</h2>
+            <p className="subtitle">Things to explore</p>
+          </div>
+          <ul>
+            <li>
+              <a
+                href="https://survey.stackoverflow.co/2025/technology/#2-web-frameworks-and-technologies"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Stack Overflow Developer Survey 2025 - Web Frameworks &amp; Technologies
+              </a>
+            </li>
+          </ul>
+        </section>
       </main>
 
       <footer className="footer">
