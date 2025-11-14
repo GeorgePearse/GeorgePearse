@@ -10,7 +10,7 @@ Stuff to add:
 
 This repository now powers a Vite + React site that documents everything I am studying and
 building. The homepage presents a card for every public repository on my
-[GitHub profile](https://github.com/GeorgePearse), enriched with tags so that projects can be sorted
+[GitHub profile](georgepearse.github.io/GeorgePearse/), enriched with tags so that projects can be sorted
 by topic (computer vision, LLMs, VLMs, MLOps, and more).
 
 ## About the Site
