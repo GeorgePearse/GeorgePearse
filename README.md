@@ -42,7 +42,6 @@ I'm currently working on:
 ### Blogs posts
 
 <!-- BLOG-POST-LIST:START -->
-
 - [The Missing Terminology of Data Centric AI](https://medium.com/@george.pearse/the-missing-terminology-of-data-centric-ai-5a0afb488817?source=rss-b502c2f08a7c------2)
 - [How to train a model with MMDetection](https://medium.com/@george.pearse/how-to-train-a-model-with-mmdetection-8ab6a6fea3f0?source=rss-b502c2f08a7c------2)
 - [Data Engine Design](https://medium.com/@george.pearse/data-engine-design-9b29a20ff9f0?source=rss-b502c2f08a7c------2)
