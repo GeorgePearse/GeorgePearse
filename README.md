@@ -24,6 +24,7 @@ Soon to be joining BinIt as Lead ML Engineer. https://binit.ai/
 
 | Project                                                              | Description                                                                                                            |
 | -------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| [squeeze](https://github.com/GeorgePearse/squeeze)                   | Dimensionality reduction research platform in Rust - modular implementations of various techniques with benchmarking   |
 | [tinify](https://github.com/GeorgePearse/tinify)                     | Deep learning image compression research and implementation - exploring neural network approaches to image compression |
 | [bayesian_filters](https://github.com/GeorgePearse/bayesian_filters) | Python Kalman filtering and optimal estimation library with Kalman, particle, EKF, UKF, and more                       |
 | [QDrant-NLP](https://github.com/GeorgePearse/QDrant-NLP)             | Lightweight UIs and tooling for the QDrant vector database                                                             |
