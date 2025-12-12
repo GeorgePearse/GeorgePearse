@@ -38,11 +38,11 @@ I'm currently working on:
 ### Blogs posts
 
 <!-- BLOG-POST-LIST:START -->
+- [How to use Modal without an exploding GPU bill](https://medium.com/@george.pearse/how-to-use-modal-without-an-exploding-gpu-bill-fb8a6c90edd8?source=rss-b502c2f08a7c------2)
 - [The Missing Terminology of Data Centric AI](https://medium.com/@george.pearse/the-missing-terminology-of-data-centric-ai-5a0afb488817?source=rss-b502c2f08a7c------2)
 - [How to train a model with MMDetection](https://medium.com/@george.pearse/how-to-train-a-model-with-mmdetection-8ab6a6fea3f0?source=rss-b502c2f08a7c------2)
 - [Data Engine Design](https://medium.com/@george.pearse/data-engine-design-9b29a20ff9f0?source=rss-b502c2f08a7c------2)
 - [Quick NLP Labelling with Bulk](https://medium.com/@george.pearse/quick-nlp-labelling-with-bulk-327ccb62320?source=rss-b502c2f08a7c------2)
-- [Vector Databases for Data-Centric AI &lpar;Part 2&rpar;](https://medium.com/@george.pearse/vector-databases-for-data-centric-ai-part-2-ba995053ce05?source=rss-b502c2f08a7c------2)
 <!-- BLOG-POST-LIST:END -->
 
 <h3 align="left">Connect with me:</h3>
