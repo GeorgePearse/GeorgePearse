@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { AboutSection } from "./components/AboutSection";
 import { MetricsChart } from "./components/MetricsChart";
+import { NotesSection } from "./components/NotesSection";
 import { RepositoryGrid } from "./components/RepositoryGrid";
 import { TagFilter } from "./components/TagFilter";
 import { useGitHubRepos } from "./hooks/useGitHubRepos";
@@ -89,6 +90,8 @@ export default function App() {
     <div className="app-shell">
       <main>
         <AboutSection />
+
+        <NotesSection />
 
         <MetricsChart />
 

@@ -14,9 +14,14 @@ export const AboutSection = () => {
           <img src={profilePhoto} alt="George Pearse" className="profile-image" />
         </div>
         <div className="about-content">
-          <div className="section-header">
-            <h1>George Pearse</h1>
-            <p className="subtitle">Machine Learning Engineer</p>
+          <div className="about-header">
+            <div className="section-header">
+              <h1>George Pearse</h1>
+              <p className="subtitle">Machine Learning Engineer</p>
+            </div>
+            <a className="about-header__cta" href="#notes">
+              Notes
+            </a>
           </div>
           <p>
             This site is a working index of projects, notes, and experiments. Most of the work here

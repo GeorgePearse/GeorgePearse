@@ -148,6 +148,7 @@ main {
 .about-container,
 .filters-panel,
 .metrics-section,
+.note-card,
 .repo-card,
 .links-section,
 .status-message,
@@ -162,6 +163,7 @@ main {
 .about-container::after,
 .filters-panel::after,
 .metrics-section::after,
+.note-card::after,
 .repo-card::after,
 .links-section::after,
 .status-message::after,
@@ -201,6 +203,14 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
+
+.about-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .filters-panel {
@@ -335,7 +345,15 @@ main {
   align-items: start;
 }
 
-.repo-card {
+.note-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  align-items: start;
+}
+
+.repo-card,
+.note-card {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -354,7 +372,9 @@ main {
 }
 
 .repo-card:hover,
-.repo-card:focus-within {
+.repo-card:focus-within,
+.note-card:hover,
+.note-card:focus-within {
   transform: translate(-2px, -2px);
   background: #fcfcf9;
   border-color: var(--accent);
@@ -393,7 +413,9 @@ main {
 }
 
 .repo-card__readme,
-.repo-card__docs {
+.repo-card__docs,
+.note-card__open,
+.about-header__cta {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
@@ -415,7 +437,9 @@ main {
 }
 
 .repo-card__readme:hover,
-.repo-card__docs:hover {
+.repo-card__docs:hover,
+.note-card__open:hover,
+.about-header__cta:hover {
   border-color: var(--accent);
   background: var(--accent);
   color: var(--paper);
@@ -423,6 +447,11 @@ main {
 
 .repo-card__readme {
   margin-right: auto;
+}
+
+.note-card__open,
+.about-header__cta {
+  align-self: flex-start;
 }
 
 .repo-card__readme-icon,
@@ -494,6 +523,75 @@ main {
   letter-spacing: 0.04em;
   line-height: 1.2;
   white-space: nowrap;
+}
+
+.note-card__eyebrow,
+.note-card__path,
+.note-modal__eyebrow,
+.note-modal__path {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.note-card__eyebrow {
+  color: var(--muted);
+}
+
+.note-card h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.note-card__title {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.note-card__title:hover {
+  text-decoration: underline;
+}
+
+.note-card__summary {
+  min-height: 4.6rem;
+  color: var(--muted);
+  font-size: 0.94rem;
+  flex-grow: 1;
+}
+
+.note-card__path {
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted-soft);
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+
+.note-card__actions {
+  display: flex;
+  margin-top: auto;
+}
+
+.note-modal__title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.note-modal__eyebrow,
+.note-modal__path {
+  color: var(--muted);
+}
+
+.note-modal__path {
+  text-transform: none;
 }
 
 .status-message {
@@ -840,6 +938,10 @@ main {
   .about-photo {
     max-width: 320px;
   }
+
+  .about-header {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 640px) {
@@ -855,6 +957,7 @@ main {
   .about-container,
   .filters-panel,
   .metrics-section,
+  .note-card,
   .links-section,
   .repo-card,
   .readme-modal__header,
@@ -866,6 +969,7 @@ main {
   .about-container::after,
   .filters-panel::after,
   .metrics-section::after,
+  .note-card::after,
   .repo-card::after,
   .links-section::after,
   .status-message::after,
@@ -874,6 +978,10 @@ main {
   }
 
   .repo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .note-grid {
     grid-template-columns: 1fr;
   }
 

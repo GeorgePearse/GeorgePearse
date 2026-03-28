@@ -9,10 +9,7 @@ test("page loads and renders main content", async ({ page }) => {
 
   // Check that the page contains the meta description
   const description = page.locator("meta[name='description']");
-  await expect(description).toHaveAttribute(
-    "content",
-    /A living notebook of projects/
-  );
+  await expect(description).toHaveAttribute("content", /A living notebook of projects/);
 
   // Wait for root element to exist
   const root = page.locator("#root");
@@ -77,4 +74,30 @@ test("renders for multiple browsers", async ({ page, browserName }) => {
   // Verify we can access the page in each browser context
   const title = await page.title();
   expect(title).toContain("George Pearse");
+});
+
+test("renders imported notes and opens a local note", async ({ page }) => {
+  await page.goto("/");
+
+  const notesSection = page.locator("#notes");
+  await expect(notesSection).toBeVisible();
+  await expect(notesSection).toContainText("Notes imported");
+
+  await page.getByRole("button", { name: "NVIDIA Software Stack Overview" }).click();
+
+  const modal = page.locator(".readme-modal");
+  await expect(modal).toContainText("NVIDIA Software Stack Overview");
+  await expect(modal.locator(".markdown-content")).toContainText(
+    "The full picture of NVIDIA's GPU computing ecosystem for ML."
+  );
+});
+
+test("follows internal markdown links between imported notes", async ({ page }) => {
+  await page.goto("/");
+
+  await page.getByRole("button", { name: "Object Detection Overview" }).click();
+  await page.locator(".markdown-content").getByRole("link", { name: "Common Components" }).click();
+
+  const modal = page.locator(".readme-modal");
+  await expect(modal).toContainText("Common Components");
 });
