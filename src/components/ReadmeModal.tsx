@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneLight, oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { oneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 interface ReadmeModalProps {
   owner: string;
@@ -13,9 +13,6 @@ export const ReadmeModal = ({ owner, repo, onClose }: ReadmeModalProps) => {
   const [content, setContent] = useState<string>("");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [isDarkMode, setIsDarkMode] = useState(
-    window.matchMedia("(prefers-color-scheme: dark)").matches
-  );
 
   useEffect(() => {
     const fetchReadme = async () => {
@@ -23,14 +20,11 @@ export const ReadmeModal = ({ owner, repo, onClose }: ReadmeModalProps) => {
         setIsLoading(true);
         setError(null);
 
-        const response = await fetch(
-          `https://api.github.com/repos/${owner}/${repo}/readme`,
-          {
-            headers: {
-              Accept: "application/vnd.github.v3.raw",
-            },
-          }
-        );
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/readme`, {
+          headers: {
+            Accept: "application/vnd.github.v3.raw",
+          },
+        });
 
         if (!response.ok) {
           throw new Error("README not found");
@@ -47,14 +41,6 @@ export const ReadmeModal = ({ owner, repo, onClose }: ReadmeModalProps) => {
 
     fetchReadme();
   }, [owner, repo]);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const handleChange = (e: MediaQueryListEvent) => setIsDarkMode(e.matches);
-
-    mediaQuery.addEventListener("change", handleChange);
-    return () => mediaQuery.removeEventListener("change", handleChange);
-  }, []);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -110,11 +96,7 @@ export const ReadmeModal = ({ owner, repo, onClose }: ReadmeModalProps) => {
                     const { children, className, node, ...rest } = props;
                     const match = /language-(\w+)/.exec(className || "");
                     return match ? (
-                      <SyntaxHighlighter
-                        style={(isDarkMode ? oneDark : oneLight) as any}
-                        language={match[1]}
-                        PreTag="div"
-                      >
+                      <SyntaxHighlighter style={oneLight as any} language={match[1]} PreTag="div">
                         {String(children).replace(/\n$/, "")}
                       </SyntaxHighlighter>
                     ) : (

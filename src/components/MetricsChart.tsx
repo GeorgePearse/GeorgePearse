@@ -16,6 +16,7 @@ interface MetricConfig {
   key: MetricType;
   label: string;
   color: string;
+  dash?: string;
   dataKey: "totalCommits" | "totalStars" | "totalLinesOfCode";
   yAxisLabel: string;
 }
@@ -24,21 +25,23 @@ const METRIC_CONFIGS: MetricConfig[] = [
   {
     key: "commits",
     label: "Total Commits",
-    color: "#2563eb",
+    color: "#23231f",
     dataKey: "totalCommits",
     yAxisLabel: "Commits",
   },
   {
     key: "stars",
     label: "Total Stars",
-    color: "#f59e0b",
+    color: "#585852",
+    dash: "10 6",
     dataKey: "totalStars",
     yAxisLabel: "Stars",
   },
   {
     key: "loc",
     label: "Lines of Code",
-    color: "#10b981",
+    color: "#878780",
+    dash: "3 5",
     dataKey: "totalLinesOfCode",
     yAxisLabel: "LOC",
   },
@@ -99,7 +102,7 @@ export const MetricsChart = () => {
               contentStyle={{
                 backgroundColor: "var(--card-bg)",
                 border: "1px solid var(--border)",
-                borderRadius: "8px",
+                borderRadius: "2px",
                 color: "inherit",
               }}
               formatter={(value: number) => [formatNumber(value), config.yAxisLabel]}
@@ -110,18 +113,22 @@ export const MetricsChart = () => {
               dataKey={config.dataKey}
               stroke={config.color}
               strokeWidth={2}
-              dot={{ fill: config.color, r: 4 }}
-              activeDot={{ r: 6 }}
-              isAnimationActive={true}
+              strokeDasharray={config.dash}
+              dot={{ fill: config.color, r: 3, strokeWidth: 0 }}
+              activeDot={{ r: 5, stroke: config.color, fill: "var(--card-bg)" }}
+              isAnimationActive={false}
             />
           </LineChart>
         </ResponsiveContainer>
       </div>
 
       <p className="metrics-subtitle">
-        {config.key === "commits" && "Total commits across all repositories. Data collected from real GitHub API metrics."}
-        {config.key === "stars" && "Cumulative stars received across all repositories. Data collected daily from GitHub."}
-        {config.key === "loc" && "Estimated total lines of code across all repositories. Based on GitHub language statistics."}
+        {config.key === "commits" &&
+          "Total commits across all repositories. Data collected from real GitHub API metrics."}
+        {config.key === "stars" &&
+          "Cumulative stars received across all repositories. Data collected daily from GitHub."}
+        {config.key === "loc" &&
+          "Estimated total lines of code across all repositories. Based on GitHub language statistics."}
       </p>
     </section>
   );

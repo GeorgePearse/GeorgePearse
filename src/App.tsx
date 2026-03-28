@@ -94,12 +94,12 @@ export default function App() {
 
         <section className="section">
           <div className="section-header">
-            <h2>Projects &amp; Repositories</h2>
+            <h2>Projects</h2>
             <p className="subtitle">
-              Explore everything I have shipped, tinkered with, or archived.
+              A searchable index of active, archived, and experimental work.
             </p>
             <p className="repo-count">
-              Total repositories: <span className="highlight-number">{repositories.length}</span>
+              Repositories indexed <span className="highlight-number">{repositories.length}</span>
             </p>
           </div>
 
@@ -188,12 +188,12 @@ export default function App() {
           {!isLoading && !error && <RepositoryGrid repositories={filteredRepositories} />}
         </section>
 
-        <section className="section">
+        <section className="section links-section">
           <div className="section-header">
-            <h2>Random / Other</h2>
-            <p className="subtitle">Things to explore</p>
+            <h2>Links</h2>
+            <p className="subtitle">References and useful detours.</p>
           </div>
-          <ul>
+          <ul className="links-list">
             <li>
               <a
                 href="https://survey.stackoverflow.co/2025/technology/#2-web-frameworks-and-technologies"

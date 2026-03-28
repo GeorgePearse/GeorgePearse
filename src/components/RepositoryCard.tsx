@@ -1,7 +1,4 @@
-import { useEffect, useRef, useState } from "react";
 import { formatDistanceToNow } from "../utils/dates";
-import { getTagColor } from "../utils/tagColors";
-import { getProximityColor } from "../utils/proximityColor";
 import type { RepositoryWithTags } from "../types/github";
 
 interface RepositoryCardProps {
@@ -10,8 +7,6 @@ interface RepositoryCardProps {
 }
 
 export const RepositoryCard = ({ repository, onReadmeClick }: RepositoryCardProps) => {
-  const titleRef = useRef<HTMLAnchorElement>(null);
-  const [titleColor, setTitleColor] = useState("rgb(37, 99, 235)"); // Default blue
   const {
     name,
     html_url: url,
@@ -25,30 +20,11 @@ export const RepositoryCard = ({ repository, onReadmeClick }: RepositoryCardProp
     hasDocsLink,
   } = repository;
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      if (titleRef.current) {
-        const rect = titleRef.current.getBoundingClientRect();
-        const color = getProximityColor(e.clientX, e.clientY, rect);
-        setTitleColor(color);
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
   return (
     <article className="repo-card">
       <header className="repo-card__header">
         <h3>
-          <a
-            ref={titleRef}
-            href={url}
-            target="_blank"
-            rel="noreferrer"
-            style={{ color: titleColor }}
-          >
+          <a href={url} target="_blank" rel="noreferrer">
             {name}
           </a>
         </h3>
@@ -132,21 +108,11 @@ export const RepositoryCard = ({ repository, onReadmeClick }: RepositoryCardProp
         </div>
       </dl>
       <ul className="repo-card__tags">
-        {allTags.map((tag) => {
-          const colors = getTagColor(tag);
-          return (
-            <li
-              key={tag}
-              className="repo-card__tag"
-              style={{
-                backgroundColor: colors.bg,
-                color: colors.text,
-              }}
-            >
-              {tag}
-            </li>
-          );
-        })}
+        {allTags.map((tag) => (
+          <li key={tag} className="repo-card__tag">
+            {tag}
+          </li>
+        ))}
       </ul>
     </article>
   );
