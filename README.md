@@ -1,6 +1,7 @@
 ### About Me
 
 ML Engineer focused on computer vision for heavy industry — recycling facilities, scrapyards, and aluminum smelters. Currently Platform Lead at Visia, building multi-sensor perception systems (RGB, X-ray, CT, FLIR thermal) for hazard detection and material classification.
+
 Background spans Physics → Data Engineering (Flask, SQL, AWS) → Computer Vision (behold.ai, active learning with PyTorch Lightning + BAAL, cleanlab-style data cleaning) → ML platform engineering. Now deep in agentic tooling, training infrastructure, and the full ML lifecycle from annotation to deployment on Jetson Orin edge devices.
 Based in Brooklyn, NYC. Writing occasionally at medium.com/@george.pearse.
 
