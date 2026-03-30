@@ -1,10 +1,8 @@
 ### About Me
 
-I write about Machine Learning, Analytics and Start-Ups at https://medium.com/@george.pearse
-
-I studied Physics, then I became a Data Engineering Consultant (Flask + SQL + AWS for orchestration), then I joined a Computer Vision start-up (behold.ai) where I've done a mixed bunch. Set-up the Modern Data Stack but also focused on data-centric-ai via active learning (pytorch-lightning and BAAL) and corrupt sample discovery (cleanlab esk techniques). I've also recently become much more involved in the MLOps community.
-
-Soon to be joining BinIt as Lead ML Engineer. https://binit.ai/
+ML Engineer focused on computer vision for heavy industry — recycling facilities, scrapyards, and aluminum smelters. Currently Platform Lead at Visia, building multi-sensor perception systems (RGB, X-ray, CT, FLIR thermal) for hazard detection and material classification.
+Background spans Physics → Data Engineering (Flask, SQL, AWS) → Computer Vision (behold.ai, active learning with PyTorch Lightning + BAAL, cleanlab-style data cleaning) → ML platform engineering. Now deep in agentic tooling, training infrastructure, and the full ML lifecycle from annotation to deployment on Jetson Orin edge devices.
+Based in Brooklyn, NYC. Writing occasionally at medium.com/@george.pearse.
 
 ### GitHub Metrics
 
