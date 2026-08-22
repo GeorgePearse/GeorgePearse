@@ -23,3 +23,18 @@ export const formatDistanceToNow = (date: string | number | Date) => {
   }
   return input.toLocaleDateString();
 };
+
+/** Publication date for a post, e.g. "16 Dec 2023". */
+export const formatPostDate = (isoDate: string) => {
+  const parsed = new Date(`${isoDate}T00:00:00Z`);
+  if (Number.isNaN(parsed.getTime())) {
+    return isoDate;
+  }
+
+  return parsed.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+};
