@@ -19,9 +19,14 @@ export const AboutSection = () => {
               <h1>George Pearse</h1>
               <p className="subtitle">Machine Learning Engineer</p>
             </div>
-            <a className="about-header__cta" href="#notes">
-              Notes
-            </a>
+            <div className="about-header__links">
+              <a className="about-header__cta" href="#writing">
+                Writing
+              </a>
+              <a className="about-header__cta" href="#code">
+                Code
+              </a>
+            </div>
           </div>
           <p>
             This site is a working index of projects, notes, and experiments. Most of the work here
