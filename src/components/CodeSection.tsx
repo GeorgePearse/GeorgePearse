@@ -15,7 +15,7 @@ export const CodeSection = ({ username }: { username: string }) => {
   const [activeTag, setActiveTag] = useState<string | null>(null);
   const [activeLanguage, setActiveLanguage] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortBy, setSortBy] = useState<SortOption>("updated");
+  const [sortBy, setSortBy] = useState<SortOption>("stars");
 
   const tags: TagMeta[] = useMemo(() => {
     const counts = new Map<string, number>();

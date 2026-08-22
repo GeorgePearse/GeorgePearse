@@ -33,8 +33,8 @@ export const AboutSection = () => {
             starts as a way to learn something properly by building it.
           </p>
           <p>
-            I&apos;ve worked across computer vision, data engineering, and MLOps, and I currently
-            lead machine learning engineering at {joined}.
+            I&apos;ve worked across computer vision, data engineering, and MLOps, and I am currently
+            Head of Platform Engineering at {joined}.
           </p>
         </div>
       </div>
