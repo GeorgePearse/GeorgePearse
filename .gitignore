@@ -9,10 +9,6 @@ dist/
 .env.local
 .env.*.local
 
-# Backfill cache (intermediate results)
-data/backfill-cache/
-data/backfill-progress.json
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -28,5 +24,3 @@ data/backfill-progress.json
 test-results/
 playwright-report/
 playwright/.cache/
-
-__pycache__/

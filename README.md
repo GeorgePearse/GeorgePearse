@@ -5,16 +5,6 @@ ML Engineer focused on computer vision for heavy industry — recycling faciliti
 Background spans Physics → Data Engineering (Flask, SQL, AWS) → Computer Vision (behold.ai, active learning with PyTorch Lightning + BAAL, cleanlab-style data cleaning) → ML platform engineering. Now deep in agentic tooling, training infrastructure, and the full ML lifecycle from annotation to deployment on Jetson Orin edge devices.
 Based in Brooklyn, NYC. Writing occasionally at medium.com/@george.pearse.
 
-### GitHub Metrics
-
-<p align="center">
-  <img src="assets/followers_graph.svg" alt="GitHub Followers Over Time" width="100%">
-</p>
-
-<p align="center">
-  <img src="assets/stars_graph.svg" alt="Repository Stars Over Time" width="100%">
-</p>
-
 ### Featured Projects
 
 | Project                                                              | Description                                                                                                            |
