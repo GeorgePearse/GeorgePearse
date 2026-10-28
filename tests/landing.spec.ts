@@ -36,12 +36,15 @@ test("landing page renders five projects on a navy background", async ({ page })
   const shape = await photo.evaluate((el) => {
     const { borderRadius } = getComputedStyle(el);
     const { width, height, left, top } = el.getBoundingClientRect();
-    return { borderRadius, width, height, left, top };
+    const column = el.closest("main")!.getBoundingClientRect();
+    return { borderRadius, width, height, left, top, column, viewport: window.innerWidth };
   });
   expect(shape.borderRadius).toBe("50%");
   expect(shape.width).toBe(shape.height);
-  expect(shape.left).toBeLessThan(100);
-  expect(shape.top).toBeLessThan(100);
+  const columnMargin = (shape.viewport - shape.column.width) / 2;
+  expect(Math.abs(shape.column.left - columnMargin)).toBeLessThan(1);
+  expect(shape.left - shape.column.left).toBeLessThan(60);
+  expect(shape.top - shape.column.top).toBeLessThan(100);
 
   const background = await page
     .locator("body")

@@ -44,12 +44,14 @@ a:focus-visible {
 }
 
 .page {
+  min-height: 100vh;
   max-width: 1080px;
-  margin: 0;
+  margin: 0 auto;
   padding: 72px 48px 96px;
   display: grid;
   grid-template-columns: 300px 1fr;
   gap: 80px;
+  align-content: center;
   align-items: start;
 }
 
@@ -119,6 +121,7 @@ a:focus-visible {
     grid-template-columns: 1fr;
     gap: 56px;
     padding: 48px 24px 72px;
+    align-content: start;
   }
 
   .photo {
