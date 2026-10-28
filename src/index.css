@@ -1,8 +1,8 @@
 :root {
-  --bg: #0b1d3a;
-  --text: #e8edf5;
-  --muted: #a9b6cc;
-  --link: #8fc1ff;
+  --bg: #061024;
+  --text: #e9eef6;
+  --muted: #aab7cd;
+  --link: #93c4ff;
   color-scheme: dark;
 }
 
@@ -27,8 +27,8 @@ body {
     Helvetica,
     Arial,
     sans-serif;
-  font-size: 17px;
-  line-height: 1.5;
+  font-size: 19px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -44,34 +44,32 @@ a:focus-visible {
 }
 
 .page {
-  min-height: 100vh;
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 64px 24px;
+  max-width: 1080px;
+  margin: 0;
+  padding: 72px 48px 96px;
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 64px;
-  align-content: center;
+  grid-template-columns: 300px 1fr;
+  gap: 80px;
   align-items: start;
 }
 
 .intro {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .photo {
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 220px;
   aspect-ratio: 1;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .name {
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   font-weight: 600;
   margin: 0;
   line-height: 1.2;
@@ -82,8 +80,14 @@ a:focus-visible {
   color: var(--muted);
 }
 
-.github {
-  font-size: 0.95rem;
+.links {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  font-size: 1rem;
 }
 
 .project-list {
@@ -92,29 +96,33 @@ a:focus-visible {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 36px;
 }
 
 .project-link {
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   font-weight: 500;
 }
 
 .project-description {
-  margin: 4px 0 0;
+  margin: 6px 0 0;
   color: var(--muted);
+  max-width: 62ch;
 }
 
 @media (max-width: 720px) {
-  .page {
-    grid-template-columns: 1fr;
-    gap: 48px;
-    padding: 48px 20px;
-    align-content: start;
+  body {
+    font-size: 18px;
   }
 
-  .intro {
-    align-items: center;
-    text-align: center;
+  .page {
+    grid-template-columns: 1fr;
+    gap: 56px;
+    padding: 48px 24px 72px;
+  }
+
+  .photo {
+    width: 180px;
+    height: 180px;
   }
 }
